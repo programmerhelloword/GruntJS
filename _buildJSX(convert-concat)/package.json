@@ -1,0 +1,9 @@
+{
+  "name": "my-project-name",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-reactjsx": "^0.2.4",
+    "grunt-contrib-concat": "~0.1.3"
+  }
+}

@@ -1,0 +1,133 @@
+<!-- template.html -->
+<html>
+  <head>
+    <title>Hello React</title>
+    <script src="../js/JSXTransformer.js"></script>
+    <script src="../js/react.js"></script>
+    <script src="../js/jquery-1.10.0.min.js"></script>
+  </head>
+  <body>
+<div id="content"> </div>
+	<script type="text/jsx">
+		/**
+		* @jsx React.DOM
+		*/
+		// The above declaration must remain intact at the top of the script.
+		// Your code here
+		// tutorial1.js
+		
+		
+	     
+	     function examp1(){
+	      	var CommentBox = React.createClass({
+			  render: function() {
+			    return (
+			      <div className="commentBox">
+			        Hello, world! I am a CommentBox.
+			      </div>
+			    );
+			  }
+			});
+			React.renderComponent(
+			  <CommentBox />,
+			  document.getElementById('content')
+			);
+	      }
+	      
+    	function examp2(){
+	  		var CommentBox2 = React.createClass({
+			  render: function() {
+			    return (
+			      React.DOM.div({
+			        className: 'commentBox',
+			        children: 'Hello, world! I am a CommentBox.'
+			      })
+			    );
+			  }
+			});
+			React.renderComponent(
+			  CommentBox2({}),
+			  document.getElementById('content')
+			);
+	     }
+	      
+	      function examp3(){
+	      	var CommentList = React.createClass({
+			  render: function() {
+			    return (
+			      <div className="commentList">
+			        Hello, world! I am a CommentList.
+			      </div>
+			    );
+			  }
+			});
+			React.renderComponent(
+				CommentList({}),
+				document.getElementById('content')
+			);
+	      }
+	      
+	      function examp4(){
+	      	var CommentList = React.createClass({
+			  render: function() {
+			    return (
+			      <div className="commentList">
+			        Hello, world! I am a CommentList.
+			      </div>
+			    );
+			  }
+			});
+			
+			var CommentForm = React.createClass({
+			  render: function() {
+			    return (
+			      <div className="commentForm">
+			        Hello, world! I am a CommentForm.
+			      </div>
+			    );
+			  }
+			});
+
+	      	var CommentBox = React.createClass({
+			  render: function() {
+			    return (
+			      <div className="commentBox">
+			        <h1>Comments</h1>
+			        <CommentList />
+			        <CommentForm />
+			      </div>
+			    );
+			  }
+			});
+			
+			React.renderComponent(
+			  <CommentBox />,
+			  document.getElementById('content')
+			);
+	      }
+	      
+	      // Show current time
+	      function examp5(){
+	      	
+	      	var HelloWorld = React.createClass({
+			  render: function() {
+			    return (
+			      <p>
+			        Hello, <input type="text" placeholder="Your name here" />!
+			        It is {this.props.date.toTimeString()}
+			      </p>
+			    );
+			  }
+			});
+			
+			setInterval(function() {
+			  React.renderComponent(
+			    <HelloWorld date={new Date()} />,
+			    document.getElementById('content')
+			  );
+			}, 500);
+	      }
+	      examp4();
+    </script>
+  </body>
+</html>
